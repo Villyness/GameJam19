@@ -6,11 +6,13 @@ public class AI : MonoBehaviour
 {
     // This is the base script for the AI ships used by the player
     // Setting up...
-    public string name;
+    //public string objectName;
     public Transform[] path;
     public int currentPoint = 0;
     public float speed;
-    
+
+    public float delayTime;
+    public float currentTimer;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,12 +30,26 @@ public class AI : MonoBehaviour
 
         if (transform.position == path[currentPoint].position)
         {
-            currentPoint++;
+            Delay();
         }
 
         if (currentPoint >= path.Length)
         {
             currentPoint = 0;
+        }
+    }
+
+    private void Delay()
+    {
+        currentTimer -= Time.deltaTime;
+        if (currentTimer <= 0)
+        {
+            currentPoint++;
+            currentTimer = delayTime;
+        }
+        else
+        {
+            transform.position = Vector3.MoveTowards(transform.position, transform.position, speed * Time.deltaTime);
         }
     }
 }
