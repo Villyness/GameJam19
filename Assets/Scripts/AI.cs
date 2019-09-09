@@ -13,6 +13,7 @@ public class AI : MonoBehaviour
 
     public float delayTime;
     public float currentTimer;
+    public GameObject selfTarget;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,5 +52,16 @@ public class AI : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, transform.position, speed * Time.deltaTime);
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.GetComponent<Bullet>())
+            DestroySelf();
+    }
+
+    private void DestroySelf()
+    {
+        Destroy(selfTarget);
     }
 }
