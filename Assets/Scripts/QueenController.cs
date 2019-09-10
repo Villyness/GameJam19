@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class QueenController : MonoBehaviour
 {
-    public float speed = 1.0f;
+    public float speed;
      
     void Update()
     {
