@@ -59,12 +59,12 @@ public class ShipSpawn : MonoBehaviour
         // Spawns a copy of the currently selected ship.
         Instantiate (spawnableShips[selectedShip], spawnLocation.position, spawnLocation.rotation);
         Debug.Log("Spawning #" + selectedShip);
-
+        selectedShip = nextShip[0];
         nextShip.RemoveAt(0);
 
         // Randomly picks the next ship.
         nextShip.Add(Random.Range(0, spawnableShips.Length-1));
-        selectedShip = nextShip[0];
+        //selectedShip = nextShip[0];
         
         Debug.Log("Next ship is: #" + selectedShip);
         // TODO: Display an image of the selected ship on the SpawnPoint GameObject as well as the preview screen.
