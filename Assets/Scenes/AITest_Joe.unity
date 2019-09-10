@@ -593,6 +593,8 @@ MonoBehaviour:
   - {fileID: 2132004231}
   - {fileID: 2146437421}
   speed: 0
+  delayTime: 0
+  list: []
 --- !u!65 &575680532
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1349,6 +1351,8 @@ MonoBehaviour:
   - {fileID: 1532872511}
   - {fileID: 1534178038}
   speed: 0
+  delayTime: 0
+  list: []
 --- !u!65 &1124776883
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1464,6 +1468,8 @@ MonoBehaviour:
   - {fileID: 377101894}
   - {fileID: 1554662115}
   speed: 0
+  delayTime: 0
+  list: []
 --- !u!65 &1167292267
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1715,6 +1721,8 @@ MonoBehaviour:
   - {fileID: 874911863}
   - {fileID: 581810093}
   speed: 0
+  delayTime: 1
+  list: []
 --- !u!65 &1286667913
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1876,6 +1884,8 @@ MonoBehaviour:
   path:
   - {fileID: 1743362177}
   speed: 2
+  delayTime: 0
+  list: []
 --- !u!65 &1438555224
 BoxCollider:
   m_ObjectHideFlags: 0
