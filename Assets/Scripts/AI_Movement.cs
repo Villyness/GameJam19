@@ -122,8 +122,8 @@ public class AI_Movement : MonoBehaviour
         switch (shipType)
         {
             case ShipType.Pawn:
-                //transform.position += Vector3.down * speed * Time.deltaTime; // This is the same as below.
-                transform.position = Vector3.MoveTowards(transform.position, path[0].transform.position, speed * Time.deltaTime);
+                transform.position += Vector3.down * speed * Time.deltaTime; // This is the same as below.
+                //transform.position = Vector3.MoveTowards(transform.position, path[0].transform.position, speed * Time.deltaTime);
                 break;
             case ShipType.King:
                 break;

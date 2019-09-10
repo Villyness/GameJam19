@@ -32,7 +32,7 @@ public class ShipSpawn : MonoBehaviour
 
         for(int i = 0; i < 3; i++)
         {
-            nextShip.Add(Random.Range(0, spawnableShips.Length));
+            nextShip.Add(Random.Range(0, spawnableShips.Length-1));
         }
         StartCoroutine(StartCountdown());
 
@@ -63,7 +63,7 @@ public class ShipSpawn : MonoBehaviour
         nextShip.RemoveAt(0);
 
         // Randomly picks the next ship.
-        nextShip.Add(Random.Range(0, spawnableShips.Length));
+        nextShip.Add(Random.Range(0, spawnableShips.Length-1));
         selectedShip = nextShip[0];
         
         Debug.Log("Next ship is: #" + selectedShip);
