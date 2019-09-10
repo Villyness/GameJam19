@@ -6,7 +6,7 @@ public class ShipSpawn : MonoBehaviour
 {
     // Use the directional buttons to move a slider.
     // Slider displays an image of the currently selected ship.
-    // At specific time intervals, slider instantiates a copy of the selected ship
+    // At specific time intervals, slider instantiates the selected ship
     // Randomise the next ship to be selected.
 
     //Place Ship prefabs here.
@@ -15,6 +15,7 @@ public class ShipSpawn : MonoBehaviour
     public Transform spawnLocation;
 
     public int selectedShip;
+    public int nextShip;
 
     public float spawnTime;
     public float currSpawnTime;
@@ -26,6 +27,7 @@ public class ShipSpawn : MonoBehaviour
     void Start()
     {
         selectedShip = 0;
+        nextShip = Random.Range(0, spawnableShips.Length);
         StartCoroutine(StartCountdown());
     }
 
@@ -52,7 +54,9 @@ public class ShipSpawn : MonoBehaviour
         Debug.Log("Spawning #" + selectedShip);
         
         // Randomly picks the next ship.
-        selectedShip = Random.Range(0, spawnableShips.Length);
+        
+        selectedShip = nextShip;
+        nextShip = Random.Range(0, spawnableShips.Length);
         Debug.Log("Next ship is: #" + selectedShip);
         // TODO: Display an image of the selected ship on the SpawnPoint GameObject as well as the preview screen.
     }
