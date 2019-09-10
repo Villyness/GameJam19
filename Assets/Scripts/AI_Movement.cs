@@ -45,6 +45,7 @@ public class AI_Movement : MonoBehaviour
 
                 break;
         }
+        moveDirection = new Vector3(2, -speed, 0);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -119,6 +120,7 @@ public class AI_Movement : MonoBehaviour
                 
                 break;
             case ShipType.Bishop:
+                GetComponent<Rigidbody>().velocity = moveDirection;
                 break;
             case ShipType.Queen:
                 break;
