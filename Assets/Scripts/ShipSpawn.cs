@@ -41,6 +41,11 @@ public class ShipSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Clamping the position to within the play boundaries.
+        Vector3 currentPosition = transform.position;
+        currentPosition.x = Mathf.Clamp( currentPosition.x, -5, 5);
+        transform.position = currentPosition;
+        
         // Move the slider left and right.
         transform.position += new Vector3(Input.GetAxisRaw("Horizontal"), 0, 0) * speed * Time.deltaTime;
     }

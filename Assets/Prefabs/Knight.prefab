@@ -118,7 +118,7 @@ SphereCollider:
   m_GameObject: {fileID: 3841843874089485338}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
@@ -162,7 +162,7 @@ SphereCollider:
   m_GameObject: {fileID: 3841843874348901192}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
@@ -206,7 +206,7 @@ SphereCollider:
   m_GameObject: {fileID: 3841843874454240576}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
@@ -250,7 +250,7 @@ SphereCollider:
   m_GameObject: {fileID: 3841843874604890001}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
@@ -294,7 +294,7 @@ SphereCollider:
   m_GameObject: {fileID: 3841843874608363140}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
@@ -338,7 +338,7 @@ SphereCollider:
   m_GameObject: {fileID: 3841843874701807881}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
@@ -382,7 +382,7 @@ SphereCollider:
   m_GameObject: {fileID: 3841843874848708683}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
@@ -465,6 +465,8 @@ MonoBehaviour:
   speed: 0
   delayTime: 1
   list: []
+  ownCollider: {fileID: 0}
+  delayCoef: 0
 --- !u!1 &3841843875781562922
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,7 +507,7 @@ SphereCollider:
   m_GameObject: {fileID: 3841843875781562922}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
