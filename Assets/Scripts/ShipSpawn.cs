@@ -15,7 +15,9 @@ public class ShipSpawn : MonoBehaviour
     public Transform spawnLocation;
 
     public int selectedShip;
-    public int nextShip;
+    //public int nextShip;
+
+    public List<int> nextShip; 
 
     public float spawnTime;
     public float currSpawnTime;
@@ -27,8 +29,13 @@ public class ShipSpawn : MonoBehaviour
     void Start()
     {
         selectedShip = 0;
-        nextShip = Random.Range(0, spawnableShips.Length);
+
+        for(int i = 0; i < 3; i++)
+        {
+            nextShip.Add(Random.Range(0, spawnableShips.Length));
+        }
         StartCoroutine(StartCountdown());
+
     }
 
     // Update is called once per frame
@@ -52,11 +59,13 @@ public class ShipSpawn : MonoBehaviour
         // Spawns a copy of the currently selected ship.
         Instantiate (spawnableShips[selectedShip], spawnLocation.position, spawnLocation.rotation);
         Debug.Log("Spawning #" + selectedShip);
-        
+
+        nextShip.RemoveAt(0);
+
         // Randomly picks the next ship.
+        nextShip.Add(Random.Range(0, spawnableShips.Length));
+        selectedShip = nextShip[0];
         
-        selectedShip = nextShip;
-        nextShip = Random.Range(0, spawnableShips.Length);
         Debug.Log("Next ship is: #" + selectedShip);
         // TODO: Display an image of the selected ship on the SpawnPoint GameObject as well as the preview screen.
     }
