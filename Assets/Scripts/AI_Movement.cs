@@ -69,6 +69,22 @@ public class AI_Movement : MonoBehaviour
                     break;
             }
         }
+
+        // Most ships must be destroyed here. The Bishop bounces off.
+        if (other.tag == "Bottom")
+        {
+            switch(shipType)
+            {
+                case ShipType.Pawn:
+                    // Destroy the Pawn. The next time a ship is spawned, spawn another clone directly behind it (Bonus Ship).
+                    Destroy(gameObject);
+                    break;
+                    // TODO: Bonus Ship
+                case ShipType.Bishop:
+                moveDirection.y = -moveDirection.y;
+                break;
+            }
+        }
     }
 
     // Occurs when the player releases a ship from the top of the screen.
