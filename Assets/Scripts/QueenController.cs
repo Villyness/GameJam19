@@ -8,7 +8,12 @@ public class QueenController : MonoBehaviour
      
     void Update()
     {
-        var move = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0);
+        // Clamping the position to within the play boundaries.
+        Vector3 currentPosition = transform.position;
+        currentPosition.x = Mathf.Clamp( currentPosition.x, -6, 6);
+        transform.position = currentPosition;
+        
+        var move = new Vector3(Input.GetAxisRaw("Horizontal"), 0, 0);
         transform.position += move * speed * Time.deltaTime;
     }
 }
