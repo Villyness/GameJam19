@@ -47,7 +47,7 @@ public class ShipSpawn : MonoBehaviour
         transform.position = currentPosition;
         
         // Move the slider left and right.
-        transform.position += new Vector3(Input.GetAxisRaw("Horizontal"), 0, 0) * speed * Time.deltaTime;
+        transform.position += new Vector3(Input.GetAxisRaw("P1 Horizontal"), 0, 0) * speed * Time.deltaTime;
     }
 
     public IEnumerator StartCountdown(float spawnTime = 3.0f)

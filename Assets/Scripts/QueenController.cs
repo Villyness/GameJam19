@@ -26,12 +26,12 @@ public class QueenController : MonoBehaviour
         currentPosition.x = Mathf.Clamp( currentPosition.x, -6, 6);
         transform.position = currentPosition;
         
-        var move = new Vector3(Input.GetAxisRaw("Horizontal"), 0, 0);
+        var move = new Vector3(Input.GetAxisRaw("P2 Horizontal"), 0, 0);
         transform.position += move * speed * Time.deltaTime;
 
 
         shootTimer -= Time.deltaTime;
-        if (Input.GetKeyDown("space") && shootTimer < 0)
+        if (Input.GetButton("P2 Fire") && shootTimer < 0)
         {
             GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             Destroy(bullet, 5);
