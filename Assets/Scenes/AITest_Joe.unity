@@ -435,6 +435,7 @@ GameObject:
   - component: {fileID: 367740772}
   - component: {fileID: 367740771}
   - component: {fileID: 367740770}
+  - component: {fileID: 367740773}
   m_Layer: 0
   m_Name: Boundary S
   m_TagString: Bottom
@@ -515,6 +516,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 367740768}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &367740773
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367740768}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &397849299
 GameObject:
   m_ObjectHideFlags: 0
@@ -1424,6 +1441,7 @@ GameObject:
   - component: {fileID: 1080491018}
   - component: {fileID: 1080491017}
   - component: {fileID: 1080491016}
+  - component: {fileID: 1080491019}
   m_Layer: 0
   m_Name: Boundary W
   m_TagString: Boundary
@@ -1504,6 +1522,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1080491014}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &1080491019
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080491014}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1236250526
 GameObject:
   m_ObjectHideFlags: 0
@@ -2520,6 +2554,7 @@ GameObject:
   - component: {fileID: 1804800474}
   - component: {fileID: 1804800473}
   - component: {fileID: 1804800472}
+  - component: {fileID: 1804800475}
   m_Layer: 0
   m_Name: Boundary N
   m_TagString: Bottom
@@ -2600,6 +2635,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1804800470}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &1804800475
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804800470}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1840212003
 GameObject:
   m_ObjectHideFlags: 0
@@ -3140,6 +3191,7 @@ GameObject:
   - component: {fileID: 1953158374}
   - component: {fileID: 1953158373}
   - component: {fileID: 1953158372}
+  - component: {fileID: 1953158375}
   m_Layer: 0
   m_Name: Boundary E
   m_TagString: Boundary
@@ -3220,6 +3272,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1953158370}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &1953158375
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953158370}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1982290494
 GameObject:
   m_ObjectHideFlags: 0
@@ -3846,12 +3914,12 @@ PrefabInstance:
     - target: {fileID: 7486863247303603531, guid: b8d6281972cafec45bbc56c09797e8b0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.08
+      value: -2.66
       objectReference: {fileID: 0}
     - target: {fileID: 7486863247303603531, guid: b8d6281972cafec45bbc56c09797e8b0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.21
+      value: 4.9
       objectReference: {fileID: 0}
     - target: {fileID: 7486863247303603531, guid: b8d6281972cafec45bbc56c09797e8b0,
         type: 3}
@@ -3898,5 +3966,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5551819267324600804, guid: b8d6281972cafec45bbc56c09797e8b0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 63d1e36f2e74cc24699fc0151a59b2f2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8d6281972cafec45bbc56c09797e8b0, type: 3}
