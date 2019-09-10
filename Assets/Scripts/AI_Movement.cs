@@ -33,6 +33,8 @@ public class AI_Movement : MonoBehaviour
     private bool switchCounter = false;
 
     public Collider ownCollider;
+
+    public float delayCoef;
     // Start is called before the first frame update
     void Start()
     {
@@ -80,7 +82,7 @@ public class AI_Movement : MonoBehaviour
                     // store x, x = 0, y = -1 for a bit, then invert and use stored x
                     Debug.Log("Hit");
                     moveDirection = Vector3.down;
-                    delayTime = counter + delayTime;
+                    delayTime = counter + delayCoef;
                     if (switchCounter == true)
                     {
                         switchCounter = false;

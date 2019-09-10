@@ -277,6 +277,7 @@ MonoBehaviour:
   - {fileID: 7486863245980736611}
   - {fileID: 7486863247149908166}
   speed: 2
-  delayTime: 2
+  delayTime: 0
   list: []
   ownCollider: {fileID: 0}
+  delayCoef: 2
