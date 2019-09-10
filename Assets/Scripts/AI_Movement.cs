@@ -29,6 +29,10 @@ public class AI_Movement : MonoBehaviour
     private Transform[] possibleTPs;
 
     public List<Transform> list;
+
+    private bool switchCounter = false;
+
+    public Collider ownCollider;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,16 +48,24 @@ public class AI_Movement : MonoBehaviour
                 }
 
                 break;
+            case ShipType.Bishop:
+                moveDirection = new Vector3(2, -speed, 0);
+                break;
+            case ShipType.Rook:
+                moveDirection = Vector3.left;
+                break;
         }
-        moveDirection = new Vector3(2, -speed, 0);
+       
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        //Debug.Log("Hit");
         // Ships behave differently when reaching the play boundaries. 
         if (other.tag == "Boundary")
         {
-            switch(shipType)
+            //Debug.Log("Hit)");
+            switch (shipType)
             {
                 case ShipType.Bishop:
                     // Invert x
@@ -62,10 +74,21 @@ public class AI_Movement : MonoBehaviour
                 case ShipType.Knight:
                     // Invert x
                     //moveDirection.x = -moveDirection.x;
-                    
+
                     break;
                 case ShipType.Rook:
                     // store x, x = 0, y = -1 for a bit, then invert and use stored x
+                    Debug.Log("Hit");
+                    moveDirection = Vector3.down;
+                    delayTime = counter + delayTime;
+                    if (switchCounter == true)
+                    {
+                        switchCounter = false;
+                    }
+                    else
+                    {
+                        switchCounter = true;
+                    }
                     break;
             }
         }
@@ -141,6 +164,17 @@ public class AI_Movement : MonoBehaviour
             case ShipType.Queen:
                 break;
             case ShipType.Rook:
+                transform.position += moveDirection * speed * Time.deltaTime;
+                if(moveDirection == Vector3.down)
+                    if(counter >= delayTime)
+                        if (switchCounter == true)
+                        {
+                            moveDirection = Vector3.right;
+                        }
+                        else
+                        {
+                            moveDirection = Vector3.left;
+                        }
                 break;
         }
     }
