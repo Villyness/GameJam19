@@ -35,6 +35,10 @@ public class UIManager : MonoBehaviour
         next2.sprite = shipSprites[shipScript.GetComponent<ShipSpawn>().nextShip[1]];
         next3.sprite = shipSprites[shipScript.GetComponent<ShipSpawn>().nextShip[2]];
 
-        healthbarGreen.value = pilot.GetComponent<QueenController>().health;
+        if(pilot != null)
+        {
+            healthbarGreen.value = pilot.GetComponent<QueenController>().health;
+        }
+        
     }
 }

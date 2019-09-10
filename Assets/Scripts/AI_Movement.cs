@@ -200,10 +200,11 @@ public class AI_Movement : MonoBehaviour
     {
         if(canShoot && Random.Range(1,3) == 1)
         {
-            /*if(isHoming)
+            if(isHoming)
             {
                 GameObject bullet = Instantiate(homingBulletPrefab, transform.position, Quaternion.identity);
                 Destroy(bullet, 3);
+                bullet.GetComponent<HomingBullet>().target = GameObject.Find("Queen_Alt");
             }
             else
             {
@@ -212,12 +213,7 @@ public class AI_Movement : MonoBehaviour
                 Rigidbody rb = bullet.GetComponent<Rigidbody>();
                 rb.AddForce(new Vector3(0, -10, 0) * 50);
 
-            }*/
-
-            GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-            Destroy(bullet, 5);
-            Rigidbody rb = bullet.GetComponent<Rigidbody>();
-            rb.AddForce(new Vector3(0, -10, 0) * 50);
+            }
         }
 
     }
