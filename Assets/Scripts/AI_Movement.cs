@@ -23,10 +23,29 @@ public class AI_Movement : MonoBehaviour
     
     public float speed;
 
+    // V's edit; mostly just stuff to do with the knight
+    public float delayTime;
+    private float counter;
+    private Transform[] possibleTPs;
+
+    public List<Transform> list;
     // Start is called before the first frame update
     void Start()
     {
-        
+        list = new List<Transform>();
+        switch (shipType)
+        {
+            //possibleTPs = new Transform[GetComponentsInChildren<Transform>().Length];
+            
+            case ShipType.Knight:
+                foreach (Transform point in GetComponentsInChildren<Transform>())
+                {
+                    list.Add(point);
+                }
+
+                break;
+        }
+        moveDirection = new Vector3(2, -speed, 0);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -42,7 +61,8 @@ public class AI_Movement : MonoBehaviour
                     break;
                 case ShipType.Knight:
                     // Invert x
-                    moveDirection.x = -moveDirection.x;
+                    //moveDirection.x = -moveDirection.x;
+                    
                     break;
                 case ShipType.Rook:
                     // store x, x = 0, y = -1 for a bit, then invert and use stored x
@@ -81,6 +101,8 @@ public class AI_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        counter += Time.deltaTime;
+        
         switch (shipType)
         {
             case ShipType.Pawn:
@@ -90,8 +112,15 @@ public class AI_Movement : MonoBehaviour
             case ShipType.King:
                 break;
             case ShipType.Knight:
+                if ((int) counter == (int) delayTime)
+                {
+                    GetComponent<Transform>().position = list[(int)(Random.Range(0, list.Count))].position;
+                    counter = 0;
+                }
+                
                 break;
             case ShipType.Bishop:
+                GetComponent<Rigidbody>().velocity = moveDirection;
                 break;
             case ShipType.Queen:
                 break;
