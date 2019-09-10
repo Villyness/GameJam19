@@ -28,7 +28,11 @@ public class HomingBullet : MonoBehaviour
     }
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+        if(target != null)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+        }
+        
 
         //this gives the bullet more of an arc rather than it flying straight towards the player
         if(isRight)

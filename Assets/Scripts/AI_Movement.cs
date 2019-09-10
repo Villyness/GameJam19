@@ -121,8 +121,12 @@ public class AI_Movement : MonoBehaviour
 
         if(other.tag == "Pilot")
         {
-            other.GetComponent<QueenController>().health -= 20;
+            other.GetComponent<QueenController>().health -= 10;
 
+            Destroy(gameObject);
+        }
+        if (other.tag == "PilotBullet")
+        {
             Destroy(gameObject);
         }
     }

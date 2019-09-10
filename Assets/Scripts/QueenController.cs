@@ -5,12 +5,18 @@ using UnityEngine;
 public class QueenController : MonoBehaviour
 {
     public float speed;
-
     public int health;
+
+    float shootDelay;
+    float shootTimer;
+
+    public GameObject bulletPrefab;
 
     private void Start()
     {
         health = 100;
+        shootDelay = 2;
+        shootTimer = 0;
     }
 
     void Update()
@@ -24,7 +30,21 @@ public class QueenController : MonoBehaviour
         transform.position += move * speed * Time.deltaTime;
 
 
-        if(health <= 0)
+        shootTimer -= Time.deltaTime;
+        if (Input.GetKeyDown("space") && shootTimer < 0)
+        {
+            GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+            Destroy(bullet, 5);
+            Rigidbody rb = bullet.GetComponent<Rigidbody>();
+            rb.AddForce(new Vector3(0, 10, 0) * 50);
+
+
+            shootTimer = shootDelay;
+        }
+
+
+
+        if (health <= 0)
         {
             Destroy(gameObject);
         }

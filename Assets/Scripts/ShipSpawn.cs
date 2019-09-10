@@ -62,7 +62,8 @@ public class ShipSpawn : MonoBehaviour
         StartCoroutine(StartCountdown());
         
         // Spawns a copy of the currently selected ship.
-        Instantiate (spawnableShips[selectedShip], spawnLocation.position, spawnLocation.rotation);
+        GameObject temp = Instantiate (spawnableShips[selectedShip], spawnLocation.position, spawnLocation.rotation);
+        temp.tag = "Player";
         Debug.Log("Spawning #" + selectedShip);
         selectedShip = nextShip[0];
         nextShip.RemoveAt(0);

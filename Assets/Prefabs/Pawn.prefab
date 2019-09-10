@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 137095465817119337}
   - component: {fileID: 137095465817119338}
   - component: {fileID: 137095465817119333}
-  - component: {fileID: 137095465817119342}
+  - component: {fileID: 7559470725738934314}
   m_Layer: 0
   m_Name: Pawn
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,7 +72,7 @@ MonoBehaviour:
   homingBulletPrefab: {fileID: 0}
   canShoot: 0
   isHoming: 0
---- !u!54 &137095465817119342
+--- !u!54 &7559470725738934314
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 137095467664390143}
   m_Layer: 0
   m_Name: ShipModel
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
