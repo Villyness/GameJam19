@@ -17,6 +17,11 @@ public class UIManager : MonoBehaviour
 
     public Sprite[] shipSprites = new Sprite[5];
 
+    public GameObject pilot;
+
+    public Slider healthbarRed;
+    public Slider healthbarGreen;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,5 +34,7 @@ public class UIManager : MonoBehaviour
         next1.sprite = shipSprites[shipScript.GetComponent<ShipSpawn>().nextShip[0]];
         next2.sprite = shipSprites[shipScript.GetComponent<ShipSpawn>().nextShip[1]];
         next3.sprite = shipSprites[shipScript.GetComponent<ShipSpawn>().nextShip[2]];
+
+        healthbarGreen.value = pilot.GetComponent<QueenController>().health;
     }
 }

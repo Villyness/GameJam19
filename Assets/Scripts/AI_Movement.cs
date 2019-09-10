@@ -35,6 +35,13 @@ public class AI_Movement : MonoBehaviour
     public Collider ownCollider;
 
     public float delayCoef;
+
+    public GameObject bulletPrefab;
+    public GameObject homingBulletPrefab;
+    public bool canShoot;
+    public bool isHoming;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,7 +64,8 @@ public class AI_Movement : MonoBehaviour
                 moveDirection = Vector3.left;
                 break;
         }
-       
+
+        InvokeRepeating("Shoot", 1, 1);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -109,6 +117,13 @@ public class AI_Movement : MonoBehaviour
                 moveDirection.y = -moveDirection.y;
                 break;
             }
+        }
+
+        if(other.tag == "Pilot")
+        {
+            other.GetComponent<QueenController>().health -= 20;
+
+            Destroy(gameObject);
         }
     }
 
@@ -179,5 +194,31 @@ public class AI_Movement : MonoBehaviour
                         }
                 break;
         }
+    }
+
+    void Shoot()
+    {
+        if(canShoot && Random.Range(1,3) == 1)
+        {
+            /*if(isHoming)
+            {
+                GameObject bullet = Instantiate(homingBulletPrefab, transform.position, Quaternion.identity);
+                Destroy(bullet, 3);
+            }
+            else
+            {
+                GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+                Destroy(bullet, 5);
+                Rigidbody rb = bullet.GetComponent<Rigidbody>();
+                rb.AddForce(new Vector3(0, -10, 0) * 50);
+
+            }*/
+
+            GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+            Destroy(bullet, 5);
+            Rigidbody rb = bullet.GetComponent<Rigidbody>();
+            rb.AddForce(new Vector3(0, -10, 0) * 50);
+        }
+
     }
 }

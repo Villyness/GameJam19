@@ -66,6 +66,12 @@ MonoBehaviour:
   speed: 3
   delayTime: 0
   list: []
+  ownCollider: {fileID: 0}
+  delayCoef: 0
+  bulletPrefab: {fileID: 0}
+  homingBulletPrefab: {fileID: 0}
+  canShoot: 0
+  isHoming: 0
 --- !u!54 &137095465817119342
 Rigidbody:
   m_ObjectHideFlags: 0

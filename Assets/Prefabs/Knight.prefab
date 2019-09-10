@@ -467,6 +467,12 @@ MonoBehaviour:
   list: []
   ownCollider: {fileID: 0}
   delayCoef: 0
+  bulletPrefab: {fileID: 4811279123148631165, guid: ba9503cd6e8febd4bb5c11b9e555fe30,
+    type: 3}
+  homingBulletPrefab: {fileID: 5480756947579160984, guid: df4c8d7de434178498348c83687c69f1,
+    type: 3}
+  canShoot: 1
+  isHoming: 1
 --- !u!1 &3841843875781562922
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,19 +15,33 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
-        speedVector = new Vector3(speed, 0, 0);
+        //speedVector = new Vector3(0, -speed, 0);
     }
     void Update()
     {
-        GetComponent<Rigidbody>().velocity = speedVector;
+        //GetComponent<Rigidbody>().velocity = speedVector;
+
+        /*
         timer += Time.deltaTime;
         if((int)timer == (int)expiryTimer)
-            DestroySelf();
+            DestroySelf();*/
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        DestroySelf();
+        //DestroySelf();
+
+        //give the Pilot a pilot tag so the pilot will be hurt by bullets
+        if(other.tag == "Pilot")
+        {
+            //set pilot's health to -10
+            //right now the Pilot is controlled by QueenController, change this as necessary.
+            other.GetComponent<QueenController>().health -= 10;
+            //destroy itself
+            
+
+            Destroy(gameObject);
+        }
     }
 
     public void DestroySelf()

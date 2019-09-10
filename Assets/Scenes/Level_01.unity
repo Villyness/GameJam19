@@ -706,6 +706,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6201f80095dbbaf4cb38fa060090e361, type: 3}
   - {fileID: 21300000, guid: 64e5f899cdb7e414db41d82dc7ea5d81, type: 3}
   - {fileID: 21300000, guid: 60fc8e860ae5de147b44a804c18c716a, type: 3}
+  pilot: {fileID: 1313745469}
+  healthbarRed: {fileID: 1378973621}
+  healthbarGreen: {fileID: 2024355661}
 --- !u!4 &571102661
 Transform:
   m_ObjectHideFlags: 0
@@ -1613,6 +1616,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1236250526}
   m_CullTransparentMesh: 0
+--- !u!1 &1313745469 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 587531601423703324, guid: 023a774ff62d20f46b67a41362555fd2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1525140431}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1335949962
 GameObject:
   m_ObjectHideFlags: 0
@@ -2039,6 +2048,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Queen_Alt
+      objectReference: {fileID: 0}
+    - target: {fileID: 587531601423703324, guid: 023a774ff62d20f46b67a41362555fd2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pilot
       objectReference: {fileID: 0}
     - target: {fileID: 587531601423703315, guid: 023a774ff62d20f46b67a41362555fd2,
         type: 3}

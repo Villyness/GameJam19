@@ -15,23 +15,37 @@ public class HomingBullet : MonoBehaviour
     
     void Start()
     {
+        speed = 3f; //adjust later
         //speedVector = new Vector3(speed, 0, 0);
     }
     void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
-        timer += Time.deltaTime;
+
+        /*timer += Time.deltaTime;
         if((int)timer == (int)expiryTimer)
-            DestroySelf();
+            DestroySelf();*/
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        DestroySelf();
+        //DestroySelf();
+
+        //give the Pilot a pilot tag so the pilot will be hurt by bullets
+        if (other.tag == "Pilot")
+        {
+            //set pilot's health to -10
+            //right now the Pilot is controlled by QueenController, change this as necessary.
+            other.GetComponent<QueenController>().health -= 10;
+            //destroy itself
+
+
+            Destroy(gameObject);
+        }
     }
 
     public void DestroySelf()
     {
-        Destroy(selfObj);
+        //Destroy(selfObj);
     }
 }

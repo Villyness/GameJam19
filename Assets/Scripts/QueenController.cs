@@ -5,7 +5,14 @@ using UnityEngine;
 public class QueenController : MonoBehaviour
 {
     public float speed;
-     
+
+    public int health;
+
+    private void Start()
+    {
+        health = 100;
+    }
+
     void Update()
     {
         // Clamping the position to within the play boundaries.
@@ -15,5 +22,11 @@ public class QueenController : MonoBehaviour
         
         var move = new Vector3(Input.GetAxisRaw("Horizontal"), 0, 0);
         transform.position += move * speed * Time.deltaTime;
+
+
+        if(health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
