@@ -262,6 +262,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipType: 3
+  queenControllerScript: {fileID: 7612211998831054057, guid: 023a774ff62d20f46b67a41362555fd2,
+    type: 3}
   path:
   - {fileID: 6225677961480242658}
   - {fileID: 6225677961483728571}

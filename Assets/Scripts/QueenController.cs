@@ -12,11 +12,14 @@ public class QueenController : MonoBehaviour
 
     public GameObject bulletPrefab;
 
+    public int enemiesRemaining;
+
     private void Start()
     {
         health = 100;
-        shootDelay = 2;
+        shootDelay = 1;
         shootTimer = 0;
+        enemiesRemaining = 100;
     }
 
     void Update()

@@ -126,7 +126,11 @@ public class AI_Movement : MonoBehaviour
             Destroy(gameObject);
         }
         if (other.tag == "PilotBullet")
-        {
+        {            
+            GameObject g = GameObject.Find("Queen_Alt");
+
+            g.GetComponent<QueenController>().enemiesRemaining -= 10;
+
             Destroy(gameObject);
         }
     }
