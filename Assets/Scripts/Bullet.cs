@@ -12,6 +12,7 @@ public class Bullet : MonoBehaviour
     public float expiryTimer;
     private float timer;
     public GameObject selfObj;
+    public MixMaster MahSoundBoi;
 
     void Start()
     {
@@ -37,6 +38,7 @@ public class Bullet : MonoBehaviour
             //set pilot's health to -10
             //right now the Pilot is controlled by QueenController, change this as necessary.
             other.GetComponent<QueenController>().health -= 10;
+            MahSoundBoi.BulletHitShip();
             //destroy itself
             
 

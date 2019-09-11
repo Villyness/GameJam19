@@ -7,6 +7,26 @@ public class MixMaster : MonoBehaviour
     // Variables
     
 
+    public void ShipOnShip()
+    {
+
+    }
+
+    public void BulletHitShip()
+    {
+
+    }
+
+    public void HomingHitShip()
+    {
+
+    }
+
+    public void ShipGotRekt()
+    {
+
+    }
+
     // Start is called before the first frame update
     void Start()
     {

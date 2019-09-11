@@ -41,6 +41,8 @@ public class AI_Movement : MonoBehaviour
     public bool canShoot;
     public bool isHoming;
 
+    public MixMaster MahSoundBoi;
+
 
     // Start is called before the first frame update
     void Start()
@@ -122,6 +124,7 @@ public class AI_Movement : MonoBehaviour
         if(other.tag == "Pilot")
         {
             other.GetComponent<QueenController>().health -= 10;
+            MahSoundBoi.ShipOnShip();
 
             Destroy(gameObject);
         }
@@ -130,6 +133,7 @@ public class AI_Movement : MonoBehaviour
             GameObject g = GameObject.Find("Queen_Alt");
 
             g.GetComponent<QueenController>().enemiesRemaining -= 10;
+            MahSoundBoi.ShipGotRekt();
 
             Destroy(gameObject);
         }

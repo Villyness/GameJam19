@@ -12,6 +12,7 @@ public class HomingBullet : MonoBehaviour
     private float timer;
     public GameObject selfObj;
     public GameObject target;
+    public MixMaster MahSoundBoi;
 
 
     bool isRight;
@@ -60,6 +61,7 @@ public class HomingBullet : MonoBehaviour
             //set pilot's health to -10
             //right now the Pilot is controlled by QueenController, change this as necessary.
             other.GetComponent<QueenController>().health -= 10;
+            MahSoundBoi.HomingHitShip();
             //destroy itself
 
 
