@@ -47,6 +47,9 @@ public class AI_Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameObject jamintern = GameObject.Find("MasterOfJams");
+        MahSoundBoi = jamintern.GetComponent<MixMaster>();
+
         list = new List<Transform>();
         switch (shipType)
         {

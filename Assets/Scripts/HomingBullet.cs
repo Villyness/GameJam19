@@ -19,6 +19,9 @@ public class HomingBullet : MonoBehaviour
     
     void Start()
     {
+        GameObject jamintern = GameObject.Find("MasterOfJams");
+        MahSoundBoi = jamintern.GetComponent<MixMaster>();
+
         speed = 6f; //adjust later
         //speedVector = new Vector3(speed, 0, 0);
 

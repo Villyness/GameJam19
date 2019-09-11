@@ -16,6 +16,9 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
+        GameObject jamintern = GameObject.Find("MasterOfJams");
+        MahSoundBoi = jamintern.GetComponent<MixMaster>();
+
         //speedVector = new Vector3(0, -speed, 0);
     }
     void Update()
