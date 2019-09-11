@@ -38,8 +38,7 @@ public class UIManager : MonoBehaviour
         if(pilot != null)
         {
             healthbarGreen.value = pilot.GetComponent<QueenController>().health;
+            healthbarRed.value = pilot.GetComponent<QueenController>().enemiesRemaining;      
         }
-
-        healthbarRed.value = pilot.GetComponent<QueenController>().enemiesRemaining;      
     }
 }

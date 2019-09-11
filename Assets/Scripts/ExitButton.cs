@@ -42,6 +42,6 @@ public class ExitButton : MonoBehaviour
     public void ExitClick()
     {
         Application.Quit();
-        EditorApplication.isPlaying = false;
+        //EditorApplication.isPlaying = false;
     }
 }
