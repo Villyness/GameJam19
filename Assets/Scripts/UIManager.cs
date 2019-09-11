@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class UIManager : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class UIManager : MonoBehaviour
     public Slider healthbarRed;
     public Slider healthbarGreen;
 
+    // event stuff
+    public event Action levelComplete;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,5 +43,9 @@ public class UIManager : MonoBehaviour
             healthbarGreen.value = pilot.GetComponent<QueenController>().health;
             healthbarRed.value = pilot.GetComponent<QueenController>().enemiesRemaining;      
         }
+
+        if (healthbarRed.value <= 0 || healthbarGreen.value <= 0)
+            if (levelComplete != null)
+                levelComplete();
     }
 }
